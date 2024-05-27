@@ -1,6 +1,6 @@
 # Project Settings
 debug ?= 0
-NAME := gnaro
+NAME := clox
 SRC_DIR := src
 BUILD_DIR := build
 INCLUDE_DIR := include
@@ -46,7 +46,7 @@ $(OBJS): dir
 
 # Run formatter on source directories
 format:
-	@$(FORMATTER) -style=file -i $(SRC_DIR)/*
+	@$(FORMATTER) -style=file -i $(SRC_DIR)/* $(INCLUDE_DIR)/*
 
 # Setup build and bin directories
 dir:

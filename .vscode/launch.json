@@ -9,7 +9,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/bin/gnaro",
+            "program": "${workspaceFolder}/bin/clox",
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "build debug",
             "sourceLanguages": [
