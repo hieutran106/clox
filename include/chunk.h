@@ -2,12 +2,13 @@
 #define clox_chunk_h
 
 #include "common.h"
+#include "memory.h"
 
 typedef enum { OP_RETURN } OpCode;
 
 typedef struct {
   // Dynamic array
-  // Store 2 numbers 
+  // Store 2 numbers
   //  - capacity: the number of elements in the array we have allocated
   //  - count: how many of those allocated entries are actually in use
   int count;
@@ -15,6 +16,7 @@ typedef struct {
   uint8_t *code;
 } Chunk;
 
-void initChunk(Chunk* chunk);
+void initChunk(Chunk *chunk);
+void writeChunk(Chunk *chunk, uint8_t byte);
 
 #endif

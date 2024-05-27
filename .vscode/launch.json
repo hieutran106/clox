@@ -15,6 +15,18 @@
             "sourceLanguages": [
                 "c"
             ]
+        },
+        {
+            // See https://code.visualstudio.com/docs/cpp/launch-json-reference
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug Test",
+            "program": "${workspaceFolder}/bin/clox_test",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build test debug",
+            "sourceLanguages": [
+                "c"
+            ]
         }
     ]
 }
