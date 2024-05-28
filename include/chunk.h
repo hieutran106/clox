@@ -6,17 +6,17 @@
 
 typedef enum { OP_RETURN } OpCode;
 
-typedef struct {
-  // Dynamic array
-  // Store 2 numbers
-  //  - capacity: the number of elements in the array we have allocated
-  //  - count: how many of those allocated entries are actually in use
+// Dynamic array
+typedef struct Chunk {
+  // count: how many of those allocated entries are actually in use
   int count;
+  // capacity: the number of elements in the array we have allocated
   int capacity;
   uint8_t *code;
 } Chunk;
 
 void initChunk(Chunk *chunk);
+void freeChunk(Chunk *chunk);
 void writeChunk(Chunk *chunk, uint8_t byte);
 
 #endif
