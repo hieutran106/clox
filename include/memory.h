@@ -3,15 +3,6 @@
 
 #include "common.h"
 
-#define GROW_CAPACITY(capacity) ((capacity) < 8 ? 8 : (capacity) * 2)
-
-#define GROW_ARRAY(type, pointer, oldCount, newCount)                          \
-  (type *)reallocate(pointer, sizeof(type) * (oldCount),                       \
-                     sizeof(type) * (newCount))
-
-#define FREE_ARRAY(type, pointer, oldCount)                                    \
-  reallocate(pointer, sizeof(type) * (oldCount), 0)
-
 /*
  * Dynamic memory management in clox - allocating, freeing, changing the size of
  * an existing allocation
@@ -23,5 +14,9 @@
  * allocation
  */
 void *reallocate(void *pointer, size_t oldSize, size_t newSize);
+
+int growCapacity(int oldCapacity);
+uint8_t *growArray_uint8_t(uint8_t *pointer, int oldCount, int newCount);
+void *freeArray(uint8_t *pointer, int oldCount);
 
 #endif

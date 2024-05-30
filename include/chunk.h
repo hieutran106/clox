@@ -8,11 +8,11 @@ typedef enum { OP_RETURN } OpCode;
 
 // Dynamic array
 typedef struct Chunk {
-  // count: how many of those allocated entries are actually in use
-  int count;
-  // capacity: the number of elements in the array we have allocated
-  int capacity;
-  uint8_t *code;
+    // count: how many of those allocated entries are actually in use
+    int count;
+    // capacity: the number of elements in the array we have allocated
+    int capacity;
+    uint8_t *code;
 } Chunk;
 
 void initChunk(Chunk *chunk);
