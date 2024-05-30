@@ -10,7 +10,7 @@ void initChunk(Chunk *chunk) {
 }
 
 void freeChunk(Chunk *chunk) {
-    FREE_ARRAY(uint8_t, chunk->code, chunk->capacity);
+    freeArray(chunk->code, chunk->capacity);
     initChunk(chunk);
 }
 
